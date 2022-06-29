@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:component-scan base-package="com.project"></context:component-scan>
+
+	<bean
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"
+		id="session">
+		<property name="dataSource" ref="driverManagerSource"></property>
+		<property name="annotatedClasses">
+			<list>
+				<value>com.project.newspaper.entity.Newspaper</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</prop>
+				<prop key="hibernate.connection.pool_size">10</prop>
+			</props>
+		</property>
+
+
+	</bean>
+	<bean
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+
+		id="driverManagerSource">
+
+		<constructor-arg
+			value="${driverManagerDataSource.url}"></constructor-arg>
+		<constructor-arg
+			value="${driverManagerDataSource.userName}"></constructor-arg>
+		<constructor-arg
+			value="${driverManagerDataSource.password}"></constructor-arg>
+		<property name="driverClassName"
+			value="${driverManagerDataSource.driverClassName}"></property>
+
+
+	</bean>
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations" value="/WEB-INF/classes/class.properties"></property>
+	</bean>
+
+
+
+</beans>

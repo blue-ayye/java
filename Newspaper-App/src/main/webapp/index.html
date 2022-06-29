@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Enter Newspaper Details</h1>
+	<hr>
+	<form action="save.do">
+		<pre>
+	Name: 		<input type="text" name="newspaperName">
+	Price: 		<input type="text" name="price">
+	Language: 	<input type="text" name="language">
+	No_of_pages:	<input type="text" name="noOfPages">
+	
+	<input type="submit" value="Save">
+		</pre>
+
+	</form>
+
+	<h3>Search Newspaper Details</h3>
+
+	<form action="searchID.do">
+		ID: <input type="text" name="newspaperID"> <input
+			type="submit" value="Search">
+	</form>
+
+	<form action="searchName.do">
+		Name: <input type="text" name="newspaperName"> <input
+			type="submit" value="Search">
+	</form>
+
+	<form action="searchPrice.do">
+		Price: <input type="text" name="price"> <input type="submit"
+			value="Search">
+	</form>
+
+	<form action="searchLanguage.do">
+		Language: <input type="text" name="language"> <input
+			type="submit" value="Search">
+	</form>
+
+	<form action="searchNoOfPages.do">
+		No Of Pages: <input type="text" name="noOfPages"> <input
+			type="submit" value="Search">
+	</form><br>
+
+	
+
+	<form action="deleteNewspaperWithID.do">
+	<h4>Delete Newspaper Details By ID: <input type="text" name="newspaperID"> <input
+			type="submit" value="Delete"> </h4>
+	</form><br>
+
+	
+	<form action="getAllNewspaperEntities.do">
+	<h4>Get All Newspaper Details: 		<input type="submit" value="Get All Newspaper Details"></h4>
+	</form><br>
+	
+	<h1>Update Newspaper Details</h1>
+	<hr>
+	<form action="update.do">
+		<pre>
+	Id:			<input type="text" name="id">
+	Name: 		<input type="text" name="newspaperName">
+	Price: 		<input type="text" name="price">
+	Language: 	<input type="text" name="language">
+	No_of_pages:	<input type="text" name="noOfPages">
+	
+	<input type="submit" value="Save">
+		</pre>
+
+	</form>
+</body>
+</html>
