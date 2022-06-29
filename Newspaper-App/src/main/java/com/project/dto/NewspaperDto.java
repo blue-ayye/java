@@ -4,6 +4,7 @@ import lombok.Data;
 
 @Data
 public class NewspaperDto {
+	
 	int id;
 	String newspaperName;
 	double price;
